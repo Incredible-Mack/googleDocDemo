@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\JsonResponse;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/testing', function () {
+    return 'hi';
+});
+
+Route::get('/', function (){
     return view('welcome');
+});
+
+Route::get('/apis/hitlist', function () {
+    $dummyData = [
+        'message' => 'Hello, this is dummy data!',
+        'data' => [
+            'key' => 'value',
+            'another_key' => 'another_value',
+        ],
+    ];
+
+    return new JsonResponse($dummyData);
 });

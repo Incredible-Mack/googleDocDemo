@@ -20,14 +20,10 @@ class CommentFactory extends Factory
     public function definition(): array
     {
 
-
-        $postId = FactoryHelper::getRandomModelId(Post::class);
-        $user_id = FactoryHelper::getRandomModelId(User::class);
-
         return [
             'body' => [],
-            'post_id' => $postId,
-            'user_id' => $user_id
+            'post_id' => FactoryHelper::getRandomModelId(Post::class),
+            'user_id' => FactoryHelper::getRandomModelId(User::class)
          ];
     }
 }
